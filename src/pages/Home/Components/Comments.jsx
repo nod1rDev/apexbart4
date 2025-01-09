@@ -141,7 +141,7 @@ const CommentSlider = () => {
             viewport={{ once: true, amount: 0.3 }}
             initial="hidden"
             whileInView="visible"
-            className="relative h-[350px] text-[#f9f4e8] bg-[#1f1f1f] border border-gray-400 max-w-[350px] rounded-[20px] p-[24px]"
+            className="relative h-[350px] text-[#f9f4e8] bg-[#1f1f1f] border border-gray-400 max-w-[90%] rounded-[20px] p-[24px]"
           >
             <div className="flex flex-col justify-between h-full relative">
               <p className="opacity-60 text-lg leading-[140%]">{e.p}</p>
