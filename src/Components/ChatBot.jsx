@@ -31,48 +31,48 @@ const ChatBot = () => {
     setInput("");
     setLoading(true);
 
-    // try {
-    //   const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+    try {
+      const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
-    //   const response = await fetch(
-    //     `https://api.openai.com/v1/assistants/interactions`,
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         Authorization: `Bearer ${API_KEY}`,
-    //         "OpenAI-Beta": "assistants=v2",
-    //       },
-    //       body: JSON.stringify({
-    //         input: {
-    //           message_type: "text",
-    //           text: input,
-    //         },
-    //       }),
-    //     }
-    //   );
+      const response = await fetch(
+        `https://api.openai.com/v1/assistants/interactions`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${API_KEY}`,
+            "OpenAI-Beta": "assistants=v2",
+          },
+          body: JSON.stringify({
+            input: {
+              message_type: "text",
+              text: input,
+            },
+          }),
+        }
+      );
 
-    //   if (!response.ok) {
-    //     const errorDetails = await response.json();
-    //     console.error("Error Details:", errorDetails);
-    //     throw new Error(`Server error: ${response.statusText}`);
-    //   }
+      if (!response.ok) {
+        const errorDetails = await response.json();
+        console.error("Error Details:", errorDetails);
+        throw new Error(`Server error: ${response.statusText}`);
+      }
 
-    //   const data = await response.json();
-    //   const botMessage = {
-    //     sender: "bot",
-    //     text: data.output.text.trim(),
-    //   };
-    //   setMessages((prev) => [...prev, botMessage]);
-    // } catch (error) {
-    //   console.error("Error:", error);
-    //   setMessages((prev) => [
-    //     ...prev,
-    //     { sender: "bot", text: "An error occurred. Please try again later." },
-    //   ]);
-    // } finally {
-    //   setLoading(false);
-    // }
+      const data = await response.json();
+      const botMessage = {
+        sender: "bot",
+        text: data.output.text.trim(),
+      };
+      setMessages((prev) => [...prev, botMessage]);
+    } catch (error) {
+      console.error("Error:", error);
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: "An error occurred. Please try again later." },
+      ]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
