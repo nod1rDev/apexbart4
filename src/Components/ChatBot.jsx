@@ -76,7 +76,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-10 z-50">
+    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-6 z-50">
       <AnimatePresence>
         {!isOpen && (
           <motion.button
@@ -85,7 +85,7 @@ const ChatBot = () => {
             exit={{ scale: 0 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="flex items-center gap-2 px-4  py-4 md:px-8 md:py-6 bg-gray-900  text-white rounded-full shadow-lg shadow-lg hover:bg-gray-700 transition-colors glowing-effect hover:bg-gray-900 transition-colors"
+            className="flex items-center gap-2 px-4  py-4 md:px-[5vh] md:py-[3vh] bg-gray-900  text-white rounded-full shadow-lg  hover:bg-gray-700  glowing-effect  transition-colors"
             onClick={() => setIsOpen(true)}
           >
             <MessageCircle size={32} />

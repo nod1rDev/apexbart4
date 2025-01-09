@@ -25,9 +25,9 @@ function Support() {
 
   return (
     <section id="support" className="relative w-full overflow-hidden">
-      <div className="relative w-full  min-h-screen md:h-[900px] flex flex-col md:flex-row items-center">
+      <div className="relative w-full  min-h-screen  flex flex-col md:flex-row items-center">
         {/* Spline container */}
-        <div className="absolute hidden md:flex  inset-0 md:relative md:w-1/2 h-[100vh] md:order-2">
+        <div className="absolute hidden md:flex  inset-0 md:relative md:w-[100%] h-[100vh] md:order-2">
           <Suspense fallback={<div className="bg-inherit"></div>}>
             {isSplineLoaded && (
               <Spline 
