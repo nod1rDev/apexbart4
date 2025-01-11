@@ -99,7 +99,7 @@ const ChatBot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="flex flex-col w-[380px] h-[400px] md:h-[600px] bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
+            className="flex flex-col w-[350px] md:w-[380px] h-[350px] md:h-[600px] bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
           >
             <div className="flex items-center justify-between border-b border-gray-700 p-4 bg-gray-800 text-white">
               <div className="flex items-center   gap-3">

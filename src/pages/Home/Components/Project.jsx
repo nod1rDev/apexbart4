@@ -17,10 +17,10 @@ function ProjectShowCase() {
     >
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4 text-[#f9f4e8] ">
+          <h1 className="text-5xl font-bold font-seaction mb-4 text-[#f9f4e8] ">
             <span className="text-red-500">Our</span> Projects
           </h1>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-zinc-400 text-xl font-italian max-w-2xl mx-auto">
             Discover our latest work and innovative solutions that push the
             boundaries of modern web development.
           </p>

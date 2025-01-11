@@ -42,7 +42,7 @@ function Support() {
         {/* Text content */}
         <div className="relative z-10 w-full md:ml-10 md:w-1/2 h-full flex items-center md:order-1  bg-opacity-80 md:bg-opacity-100">
           <motion.div
-            className="text-[#1f1f1f] font-bold px-6 md:px-12 py-12 md:py-0 text-[4.6rem] leading-[5rem] sm:text-[3.5rem] md:text-[8vw] md:leading-[7.6vw] w-full  uppercase"
+            className="text-[#1f1f1f] font-heading font-bold px-6 md:px-12 py-12 md:py-0 text-[4.6rem] leading-[5rem] sm:text-[3.5rem] md:text-[8vw] md:leading-[7.6vw] w-full  uppercase"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}

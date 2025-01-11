@@ -3,6 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ["Heading", "sans-serif"],
+        seaction: ["Section", "sans-serif"],
+        italian: ["italian", "sans-serif"],
+        all: ["all", "sans-serif"],
+      },
       keyframes: {
         "text-color": {
           "0%, 100%": { color: "inherit" },

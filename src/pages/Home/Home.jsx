@@ -46,10 +46,10 @@ function Home() {
             className="text-center mb-16"
           >
             <div className="flex items-center justify-center mb-4"></div>
-            <h2 className="text-3xl md:text-[5rem] font-bold text-[#1f1f1f] mb-4">
+            <h2 className="text-3xl font-seaction md:text-[5rem] font-bold text-[#1f1f1f] mb-4">
               Our <span className="text-red-600">Services</span>
             </h2>
-            <p className="text-gray-600 mt-5 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-600 font-italian mt-5 max-w-2xl mx-auto text-xl">
               Discover our comprehensive range of professional services designed
               to elevate your business
             </p>

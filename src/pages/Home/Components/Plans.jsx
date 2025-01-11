@@ -76,10 +76,10 @@ export default function PricingPlans() {
     <div className="bg-[#f9f4e8] text-[#1f1f1f] py-[90px] px-4">
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="text-center space-y-4">
-          <h2 className="text-3xl font-bold sm:text-[3rem]">
+          <h2 className="text-3xl font-bold font-seaction sm:text-[3rem]">
             <span className="text-red-500">Pricing</span> plans
           </h2>
-          <p className="max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto font-italian text-lg">
             Because our service is custom, pricing may vary due to extras like
             migrations. We have no hidden fees, but you must pay for the CRM and
             other tools directly.
@@ -97,7 +97,7 @@ export default function PricingPlans() {
                   ? {
                       hidden: {
                         opacity: 0,
-                        y: 80,
+                        y: 40,
                       },
                       visible: {
                         opacity: 1,

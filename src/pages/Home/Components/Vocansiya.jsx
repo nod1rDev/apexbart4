@@ -49,7 +49,7 @@ function Vocansiya() {
           initial="hidden"
           animate={offerHeaderAnimation.controls}
           variants={textVariant}
-          className="text-[2.2rem] text-center mb-10 leading-[2rem] md:leading-[2.6rem] md:text-[3rem] my-[1rem] font-bold uppercase"
+          className="text-[2.2rem] font-seaction text-center mb-10 leading-[2rem] md:leading-[2.6rem] md:text-[3rem] my-[1rem] font-bold uppercase"
         >
           <span className="text-red-600">Our </span>current offers
         </motion.h1>
