@@ -28,15 +28,7 @@ function Support() {
       <div className="relative w-full  min-h-screen  flex flex-col md:flex-row items-center">
         {/* Spline container */}
         <div className="absolute hidden md:flex  inset-0 md:relative md:w-[100%] h-[100vh] md:order-2">
-          <Suspense fallback={<div className="bg-inherit"></div>}>
-            {isSplineLoaded && (
-              <Spline 
-                className="w-full z-auto h-full object-cover"
-                scene="https://prod.spline.design/tgMcFTnH9Gg2BrfP/scene.splinecode" 
-                onLoad={() => console.log('Spline scene loaded')}
-              />
-            )}
-          </Suspense>
+          <div className="w-full z-auto h-full object-cover"></div> 
         </div>
 
         {/* Text content */}
