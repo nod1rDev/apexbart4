@@ -7,27 +7,27 @@ import "slick-carousel/slick/slick-theme.css";
 const comments = [
   {
     name: "Adeline M.",
-    p: `"Our company was struggling to keep up with the demands of our growing business until we found this automation agency. They helped us streamline our workflow and cut down our workload significantly. We are now able to focus on what matters most to our business, and it has resulted in a noticeable increase in productivity."`,
+    p: ` They helped us streamline our workflow and cut down our workload significantly. We are now able to focus on what matters most to our business, and it has resulted in a noticeable increase in productivity."`,
   },
   {
     name: "Trevor D.",
-    p: `"I was skeptical at first about using an automation agency, but I am so glad I did. They helped me automate all of my repetitive tasks, which has given me back so much time in my day. I can now focus on the things that I'm passionate about in my business without feeling overwhelmed."`,
+    p: `" which has given me back so much time in my day. I can now focus on the things that I'm passionate about in my business without feeling overwhelmed."`,
   },
   {
     name: "Meredith L.",
-    p: `"If you're looking for a way to scale your business without sacrificing your personal life, then this automation agency is the way to go. They helped me automate everything from social media management to customer support, which has allowed me to take my business to the next level without burning out."`,
+    p: `" the way to go. They helped me automate everything from social media management to customer support, which has allowed me to take my business to the next level without burning out."`,
   },
   {
     name: "Michael H.",
-    p: `"This automation agency has been a game-changer for my business. They helped me automate my entire workflow, which has resulted in a significant increase in productivity. I can't imagine running my business without their help."`,
+    p: `" a significant increase in productivity. I can't imagine running my business without their help."`,
   },
   {
     name: "Alice K.",
-    p: `"If you're tired of feeling like you're always behind on your work, then you need to work with this automation agency. They helped me automate all of my repetitive tasks, which has given me more time to focus on the things that matter most in my business. I'm so grateful for their help!"`,
+    p: `"ate all of my repetitive tasks, which has given me more time to focus on the things that matter most in my business. I'm so grateful for their help!"`,
   },
   {
     name: "Corey W.",
-    p: `"I can't recommend this automation agency enough. They have helped me automate my entire workflow, which has saved me so much time and energy. I no longer feel like I'm drowning in my work, and I'm able to focus on growing my business."`,
+    p: `"and energy. I no longer feel like I'm drowning in my work, and I'm able to focus on growing my business."`,
   },
 ];
 
@@ -125,7 +125,7 @@ const CommentSlider = () => {
   };
 
   return (
-    <div className="w-full mx-auto px-4 py-[90px] text-[#f9f4e8] bg-[#1f1f1f]">
+    <div className="w-full mx-auto px-4 py-[40px] text-[#f9f4e8] bg-[#1f1f1f]">
       <Slider {...commentSliderSettings}>
         {comments.map((e, i) => (
           <motion.div
@@ -141,7 +141,7 @@ const CommentSlider = () => {
             viewport={{ once: true, amount: 0.3 }}
             initial="hidden"
             whileInView="visible"
-            className="relative h-[350px] text-[#f9f4e8] bg-[#1f1f1f] border border-gray-400 max-w-[90%] rounded-[20px] p-[24px]"
+            className="relative h-[250px] text-[#f9f4e8] bg-[#1f1f1f] border border-gray-400 max-w-[90%] rounded-[20px] p-[24px]"
           >
             <div className="flex flex-col justify-between h-full relative">
               <p className="opacity-60 text-lg leading-[140%]">{e.p}</p>
@@ -156,25 +156,25 @@ const CommentSlider = () => {
         ))}
       </Slider>
 
-      <div className="mt-[90px] flex flex-col gap-6">
+      <div className="mt-[90px] flex flex-col gap-2">
         <Slider {...logoSliderSettings1}>
           {companyLogos.map((logo, index) => (
             <div key={index} className="px-4">
-              <img className="ml-10" src={logo.img} alt={logo.name} />
+              <img className="ml-4 md:max-w-[240px] md:max-h-[70px]" src={logo.img} alt={logo.name} />
             </div>
           ))}
         </Slider>
         <Slider {...logoSliderSettings2}>
           {companyLogos.map((logo, index) => (
             <div key={index} className="px-4">
-              <img className="ml-10" src={logo.img} alt={logo.name} />
+              <img className="ml-4  md:max-w-[240px] md:max-h-[70px]" src={logo.img} alt={logo.name} />
             </div>
           ))}
         </Slider>
         <Slider {...logoSliderSettings1}>
           {companyLogos.map((logo, index) => (
             <div key={index} className="px-4">
-              <img className="ml-10" src={logo.img} alt={logo.name} />
+              <img className="ml-4  md:max-w-[240px] md:max-h-[70px]" src={logo.img} alt={logo.name} />
             </div>
           ))}
         </Slider>

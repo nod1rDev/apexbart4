@@ -5,6 +5,8 @@ import { ServicePage } from "./pages/Service/Server";
 import Contact from "./pages/Consoulting/Contact";
 import { ProjectList } from "./pages/Projects/Projects";
 import { ProjectDetail } from "./pages/Projects/Components/ProjectDetails";
+import AICompanyHistory from "./pages/AboutHistory/AICompanyHistory";
+import AICompanyAbout from "./pages/AboutHistory/AICompanyAbout";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<ProjectList />} />
+          <Route path="/history" element={<AICompanyHistory />} />
+          <Route path="/team" element={<AICompanyAbout />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
       </Router>

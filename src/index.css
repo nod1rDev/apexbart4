@@ -27,30 +27,3 @@
   }
 }
 
-@font-face {
-  font-family: 'Heading';
-  src: url('/fonts/Heading.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Section';
-  src: url('/fonts/Section.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'italian';
-  src: url('/fonts/italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'all';
-  src: url('/fonts/all.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}

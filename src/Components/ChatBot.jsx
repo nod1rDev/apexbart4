@@ -85,11 +85,25 @@ const ChatBot = () => {
             exit={{ scale: 0 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="flex items-center gap-2 px-4  py-4 md:px-[5vh] md:py-[3vh] bg-gray-900  text-white rounded-full shadow-lg  hover:bg-gray-700  glowing-effect  transition-colors"
+            className="flex items-center animate-bounce-up-down   text-white rounded-full    "
             onClick={() => setIsOpen(true)}
           >
-            <MessageCircle size={32} />
-            <span className="font-bold text-[32px] hidden md:block">Chat</span>
+            <img className="w-[130px] md:w-[200px] " src="/chatbot.png" alt="" />
+
+            <style jsx>{`
+              @keyframes bounce-up-down {
+                0%,
+                100% {
+                  transform: translateY(0);
+                }
+                50% {
+                  transform: translateY(20px);
+                }
+              }
+              .animate-bounce-up-down {
+                animation: bounce-up-down 3s infinite;
+              }
+            `}</style>
           </motion.button>
         )}
 

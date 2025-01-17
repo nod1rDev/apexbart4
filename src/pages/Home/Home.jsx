@@ -30,21 +30,8 @@ function Home() {
           <Header />
           <Support />
         </div>
-        <div className="max-w-[90%] mx-auto px-4 py-[70px]">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 1 },
-              },
-            }}
-            className="text-center mb-16"
-          >
+        <div className="max-w-[90%] mx-auto px-4 md:py-[70px]">
+          <motion.div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4"></div>
             <h2 className="text-3xl font-seaction md:text-[5rem] font-bold text-[#1f1f1f] mb-4">
               Our <span className="text-red-600">Services</span>
@@ -59,20 +46,7 @@ function Home() {
             {services.map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
             ))}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 1 },
-                },
-              }}
-              className="group bg-[#fcf8f1] flex justify-between flex-col p-[32px] rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-            >
+            <motion.div className="group bg-[#fcf8f1] flex justify-between flex-col p-[32px] rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div>
                 <h1 className="text-[3rem] text-center font-bold">
                   Contact <span className="text-red-600">US</span>
@@ -96,11 +70,12 @@ function Home() {
             </motion.div>
           </div>
         </div>
-        <CommentSlider />
-
+        
+        <ProjectShowcase />
         <Vocansiya />
 
-        <ProjectShowcase />
+         
+        <CommentSlider />
         <PricingPlans />
         <FAQSection />
         <FreeConsoulting />

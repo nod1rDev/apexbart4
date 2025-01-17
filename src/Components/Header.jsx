@@ -13,7 +13,6 @@ function Header() {
   }
 
   const BaseUrl = getBaseUrl();
-  console.log(BaseUrl);
 
   const toggleMenu = (menuIndex) => {
     setActiveMenu(activeMenu === menuIndex ? null : menuIndex);
@@ -68,7 +67,7 @@ function Header() {
 
   return (
     <header
-      className={`cont flex flex-wrap -z-10 h-auto md:h-[80px] bg-inherit w-full max-w-[90%] mx-auto justify-between items-center transition-all duration-300 ${
+      className={`cont flex flex-wrap -z-10 h-[60px] md:h-[80px] bg-inherit w-full max-w-[90%] mx-auto justify-between items-center transition-all duration-300 ${
         isScrolled ? " " : ""
       }`}
     >
@@ -101,7 +100,7 @@ function Header() {
       </button>
 
       <div
-        className={`w-full md:w-auto md:flex gap-6 items-center ${
+        className={`w-full md:w-auto md:flex gap-6      items-center ${
           isMobileMenuOpen ? "block" : "hidden"
         }`}
       >
@@ -117,7 +116,7 @@ function Header() {
                 className="flex text-start leading-0 items-center"
               >
                 <div className="uppercase font-bold flex flex-col">
-                  <span className="-mb-2 opacity-[60%]">0{item.id}</span>
+                
                   {item.label}
                 </div>
                 <svg

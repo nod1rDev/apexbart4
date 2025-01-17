@@ -64,7 +64,7 @@ function Headerr() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <header className="max-w-[90%] mx-auto flex flex-wrap h-auto  md:h-[80px] bg-inherit justify-between items-center py-4 md:py-0">
+      <header className="max-w-[90%] mx-auto flex flex-wrap h-[70px]  md:h-[80px] bg-inherit justify-between items-center  md:py-0">
         <Link to={"/"} className="flex items-center">
           <img src="/logoNoBg.png" className="w-[80px]" alt="Logo" />
           <span className="font-bold ml-[-10px] text-[20px]">
@@ -96,7 +96,7 @@ function Headerr() {
 
         {/* Navigation */}
         <div
-          className={`w-full md:w-auto md:flex items-center ${
+          className={`w-full  md:w-auto md:flex bg-[#f9f4e8]  p-4 rounded-lg items-center ${
             isMobileMenuOpen ? "block" : "hidden"
           }`}
         >
@@ -114,7 +114,7 @@ function Headerr() {
                   aria-haspopup="true"
                 >
                   <div className="uppercase flex flex-col font-bold">
-                    <span className="-mb-2 opacity-60">0{item.id}</span>
+                   
                     {item.label}
                   </div>
                   <svg

@@ -89,24 +89,7 @@ export default function PricingPlans() {
         <div className="grid md:grid-cols-3 gap-8">
           {pricingTiers.map((tier, index) => (
             <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={
-                tier.status === "top"
-                  ? {
-                      hidden: {
-                        opacity: 0,
-                        y: 40,
-                      },
-                      visible: {
-                        opacity: 1,
-                        y: 0,
-                        transition: { duration: 1.2 },
-                      },
-                    }
-                  : ""
-              }
+           
               key={tier.name}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
