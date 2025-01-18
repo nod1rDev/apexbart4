@@ -12,7 +12,7 @@ function FreeConsoulting() {
         height: "100%",
         width: "100%",
       }}
-      className="w-full bg-[#f9f4e8] flex justify-center items-center text-[#f9f4e8] py-[140px]"
+      className="w-full bg-[#f9f4e8] flex justify-center items-center text-[#f9f4e8] py-[120px]"
     >
       <motion.div
         initial="hidden"

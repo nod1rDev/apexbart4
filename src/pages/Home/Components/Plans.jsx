@@ -89,17 +89,18 @@ export default function PricingPlans() {
         <div className="grid md:grid-cols-3 gap-8">
           {pricingTiers.map((tier, index) => (
             <motion.div
-           
               key={tier.name}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               {/* Card Header */}
               <div className="p-6 border-b border-gray-200">
                 <div className="text-center">
-                  <div className="text-blue-600 font-semibold mb-4">
+                  <div className=" font-semibold mb-4 ">
+                    {tier.price}
+                  </div>
+                  <div className="text-red-500 font-bold text-4xl  ">
                     {tier.name}
                   </div>
-                  <div className="text-4xl font-bold">{tier.price}</div>
                 </div>
                 <p className="text-center text-sm mt-4">{tier.description}</p>
               </div>

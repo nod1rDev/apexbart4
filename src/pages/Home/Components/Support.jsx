@@ -25,16 +25,19 @@ function Support() {
 
   return (
     <section id="support" className="relative w-full overflow-hidden">
-      <div className="relative w-full  min-h-screen  flex flex-col md:flex-row items-center">
+      <div className="relative w-full mb-6 md:mb-0 md:min-h-screen mt-5 flex flex-col md:flex-row items-center">
         {/* Spline container */}
-        <div className="absolute hidden md:flex  inset-0 md:relative md:w-[100%] h-[100vh] md:order-2">
-          <div className="w-full z-auto h-full object-cover"></div> 
+        <div className="absolute flex  inset-0 md:relative md:w-[90%] h-[90vh] md:order-2">
+          <div className="w-full z-auto h-full object-cover">
+            {" "}
+            <img className="md:w-[90%] md:h-[90%]" src="/robotBg.png" alt="" />
+          </div>
         </div>
 
         {/* Text content */}
         <div className="relative   w-full md:ml-10 md:w-1/2 h-full flex items-center md:order-1  bg-opacity-80 md:bg-opacity-100">
           <motion.div
-            className="text-[#1f1f1f] font-heading font-bold px-6 md:px-12 py-12 md:py-0 text-[4.6rem] leading-[5rem] sm:text-[3.5rem] md:text-[8vw] md:leading-[7.6vw] w-full  uppercase"
+            className="text-[#1f1f1f] font-heading font-bold px-6 md:px-12 py-12 md:py-0 text-[4rem] leading-[5rem] sm:text-[3.5rem] md:text-[8vw] md:leading-[7.6vw] w-full  uppercase"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -52,4 +55,3 @@ function Support() {
 }
 
 export default Support;
-

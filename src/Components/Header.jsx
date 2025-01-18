@@ -51,7 +51,6 @@ function Header() {
       subItems: [
         { name: "Company History", link: "/history" },
         { name: "Team", link: "/team" },
-        { name: "Careers", link: "/careers" },
       ],
     },
     {
@@ -67,7 +66,7 @@ function Header() {
 
   return (
     <header
-      className={`cont flex flex-wrap -z-10 h-[60px] md:h-[80px] bg-inherit w-full max-w-[90%] mx-auto justify-between items-center transition-all duration-300 ${
+      className={`cont flex flex-wrap z-50 h-[60px] md:h-[80px] bg-inherit w-full max-w-[90%] mx-auto justify-between items-center transition-all duration-300 ${
         isScrolled ? " " : ""
       }`}
     >
@@ -100,8 +99,8 @@ function Header() {
       </button>
 
       <div
-        className={`w-full md:w-auto md:flex gap-6      items-center ${
-          isMobileMenuOpen ? "block" : "hidden"
+        className={`w-full md:w-auto md:flex gap-6 items-center ${
+          isMobileMenuOpen ? "block z-50 p-4 bg-[#f9f4e8] md:bg-inherit" : "hidden"
         }`}
       >
         <nav className="flex flex-col md:flex-row gap-4 md:gap-10 mb-4 md:mb-0">
@@ -116,7 +115,7 @@ function Header() {
                 className="flex text-start leading-0 items-center"
               >
                 <div className="uppercase font-bold flex flex-col">
-                
+                  
                   {item.label}
                 </div>
                 <svg

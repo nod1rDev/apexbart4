@@ -66,7 +66,7 @@ function Headerr() {
     >
       <header className="max-w-[90%] mx-auto flex flex-wrap h-[70px]  md:h-[80px] bg-inherit justify-between items-center  md:py-0">
         <Link to={"/"} className="flex items-center">
-          <img src="/logoNoBg.png" className="w-[80px]" alt="Logo" />
+          <img src="/logoNoBg.png" className="h-[70px] md:w-[80px]" alt="Logo" />
           <span className="font-bold ml-[-10px] text-[20px]">
             ApexBart Solution
           </span>
@@ -96,8 +96,8 @@ function Headerr() {
 
         {/* Navigation */}
         <div
-          className={`w-full  md:w-auto md:flex bg-[#f9f4e8]  p-4 rounded-lg items-center ${
-            isMobileMenuOpen ? "block" : "hidden"
+          className={`w-full  md:w-auto md:flex bg-[#f9f4e8]  px-4 rounded-lg items-center ${
+            isMobileMenuOpen ? "block mt-4 p-4" : "hidden"
           }`}
         >
           <nav className="flex flex-col md:flex-row md:gap-10 mb-4 md:mb-0">

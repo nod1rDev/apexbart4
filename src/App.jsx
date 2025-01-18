@@ -7,6 +7,7 @@ import { ProjectList } from "./pages/Projects/Projects";
 import { ProjectDetail } from "./pages/Projects/Components/ProjectDetails";
 import AICompanyHistory from "./pages/AboutHistory/AICompanyHistory";
 import AICompanyAbout from "./pages/AboutHistory/AICompanyAbout";
+import BlogPage from "./pages/blog/Blog";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/projects" element={<ProjectList />} />
           <Route path="/history" element={<AICompanyHistory />} />
           <Route path="/team" element={<AICompanyAbout />} />
+          <Route path="/blog" element={<BlogPage />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
       </Router>
