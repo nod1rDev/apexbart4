@@ -64,10 +64,14 @@ function Headerr() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <header className="max-w-[90%] mx-auto flex flex-wrap h-[70px]  md:h-[80px] bg-inherit justify-between items-center  md:py-0">
+      <header className="max-w-[90%] mx-auto flex flex-wrap h-[70px]  md:h-[90px] bg-inherit justify-between items-center  md:py-0">
         <Link to={"/"} className="flex items-center">
-          <img src="/logoNoBg.png" className="h-[70px] md:w-[80px]" alt="Logo" />
-          <span className="font-bold ml-[-10px] text-[20px]">
+          <img
+            src="/logoNoBg.png"
+            className="w-[80px] md:w-[96px]"
+            alt="Logo"
+          />
+          <span className="font-bold ml-[-10px] text-[20px] md:text-[1.4vw]">
             ApexBart Solution
           </span>
         </Link>
@@ -113,17 +117,14 @@ function Headerr() {
                   aria-expanded={activeMenu === index}
                   aria-haspopup="true"
                 >
-                  <div className="uppercase flex flex-col font-bold">
-                   
+                  <div className="uppercase flex md:text-[1.4vw] flex-col font-bold">
                     {item.label}
                   </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
+                    className="w-[24px] ml-1 h-[24px] md:w-[32px] md:h-[32px]"
                     fill="currentColor"
-                    className="ml-1"
                   >
                     <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
                   </svg>

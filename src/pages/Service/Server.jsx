@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import { ArrowLeft } from "lucide-react";
@@ -12,7 +12,9 @@ import Footer from "../../Components/Footer";
 export function ServicePage() {
   const { id } = useParams();
   const service = services.find((s) => s.id === Number(id));
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (!service) {
     return (
       <div className="min-h-screen bg-[#f9f4e8] flex items-center justify-center">

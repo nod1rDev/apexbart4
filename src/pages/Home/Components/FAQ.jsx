@@ -86,18 +86,8 @@ export default function ImprovedFAQSection() {
             </p>
           </div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, y: 80 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 1.2 },
-              },
-            }}
+          <div
+           
           >
             <Accordion type="single" collapsible className="w-full space-y-4">
               {faqData.map((item, index) => (
@@ -115,7 +105,7 @@ export default function ImprovedFAQSection() {
                 </AccordionItem>
               ))}
             </Accordion>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

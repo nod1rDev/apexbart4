@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowRight, Check, Star } from "lucide-react";
 import Footer from "../../Components/Footer";
 import Headerr from "../../Components/Header2";
@@ -6,6 +6,9 @@ import Header from "../../Components/Header";
 import { Link } from "react-router-dom";
 
 const AICompanyHistory = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-[#f9f4e8] text-[#1f1f1f]">
       <Headerr />

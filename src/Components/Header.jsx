@@ -71,8 +71,8 @@ function Header() {
       }`}
     >
       <Link to={"/"} className="flex items-center py-4 md:py-0">
-        <img src="/logoNoBg.png" className="w-[80px]" alt="Logo" />
-        <span className="font-bold ml-[-10px] text-[20px]">
+        <img src="/logoNoBg.png" className="w-[80px] md:w-[96]" alt="Logo" />
+        <span className="font-bold ml-[-10px] text-[20px] md:text-[1.4vw]">
           ApexBart Solution
         </span>
       </Link>
@@ -107,22 +107,22 @@ function Header() {
           {navItems.map((item, index) => (
             <div
               key={item.id}
-              className="relative flex group flex-col items-start md:items-center"
+              className="relative  flex group flex-col items-start md:items-center"
               onMouseEnter={() => setActiveMenu(index)}
             >
               <button
                 onClick={() => toggleMenu(index)}
                 className="flex text-start leading-0 items-center"
               >
-                <div className="uppercase font-bold flex flex-col">
+                <div className="uppercase font-bold md:text-[1.4vw] flex flex-col">
                   
                   {item.label}
                 </div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
+                  
+                  className="w-[24px] h-[24px] md:w-[32px] md:h-[32px]"
                   fill="rgba(0,0,0,1)"
                 >
                   <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>

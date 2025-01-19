@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Clock, Calendar, Globe } from "lucide-react";
 import "react-datepicker/dist/react-datepicker.css";
 import PhoneInput from "react-phone-input-2";
@@ -30,7 +30,9 @@ function Contact() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const backButton = () => {
     if (time && selectedDate) {
       setFormVisible(false);
@@ -134,7 +136,7 @@ function Contact() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid bg-white shadow-lg md:grid-cols-2 gap-8">
+        <div className="max-w-5xl mb-[70px] mx-auto grid bg-white shadow-lg md:grid-cols-2 gap-8">
           {/* Left Panel - Company Info */}
           <div className=" border-r border-b-black p-6">
             <button

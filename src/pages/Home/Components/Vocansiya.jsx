@@ -40,30 +40,18 @@ function Vocansiya() {
 
   return (
     <>
-      <section
-        id="vocansiya"
-        className="mt-[100px]  pb-10 w-[90%] mx-auto"
-      >
-        <motion.h1
-          ref={offerHeaderAnimation.ref}
-          initial="hidden"
-          animate={offerHeaderAnimation.controls}
-          variants={textVariant}
-          className="text-[2.2rem] font-seaction text-center mb-10 leading-[2rem] md:leading-[2.6rem] md:text-[3rem] my-[1rem] font-bold uppercase"
-        >
+      <section id="vocansiya" className="mt-[100px]  pb-10 w-[90%] mx-auto">
+        <h1 className="text-[2.2rem] font-seaction text-center mb-10 leading-[2rem] md:leading-[2.6rem] md:text-[3rem] my-[1rem] font-bold uppercase">
           <span className="text-red-600">Our </span>current offers
-        </motion.h1>
+        </h1>
 
         <div className="flex flex-col gap-[2rem]">
           {[...Array(5)].map((_, i) => {
             const cardAnimation = useScrollAnimation(); // Create individual animation for each card
             return (
-              <motion.div
+              <div
                 ref={cardAnimation.ref}
                 key={i}
-                initial="hidden"
-                animate={cardAnimation.controls}
-                variants={cardVariant} // Use individual card animation
                 className="flex flex-col cursor-pointer gap-2 group"
               >
                 <div className="uppercase text-[1.25rem] font-[500] leading-1 rounded-2xl px-2 py-1 bg-[#1f1f1f] text-[#f9f4e8] flex w-full justify-between items-center">
@@ -109,28 +97,21 @@ function Vocansiya() {
                     <Link to={"/contact"}>Contact</Link>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
 
           {[...Array(2)].map((_, i) => {
             const cardAnimation = useScrollAnimation(); // Create individual animation for each card
             return (
-              <motion.div
-                ref={cardAnimation.ref}
-                key={i}
-                initial="hidden"
-                animate={cardAnimation.controls}
-                variants={cardVariant} // Use individual card animation
-                className="flex flex-col cursor-pointer gap-2 group"
-              >
+              <div key={i} className="flex flex-col cursor-pointer gap-2 group">
                 <div className="uppercase text-[1.25rem] font-[500] leading-1 rounded-2xl px-2 py-1 bg-[#1f1f1f] text-[#f9f4e8] flex w-full justify-between items-center">
                   <span>Menegeri</span>
                   <div className="flex gap-2 items-center">
                     <span>Close</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
           <style>

@@ -2,71 +2,66 @@
 
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+const PricingTier = ({ name, price, features, isPopular = false }) => (
+  <div
+    className={`bg-white p-8  rounded-lg flex flex-col justify-between shadow-lg ${
+      isPopular ? "border-2 border-[#1f1f1f]" : ""
+    }`}
+  >
+    {isPopular && (
+      <span className="bg-[#1f1f1f] max-w-[150px] text-white px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
+       The Most Famous
+      </span>
+    )}
+    <h3 className="text-2xl font-bold mb-4">{name}</h3>
+    <p className="text-4xl font-bold mb-6">
+      {price} <span className="text-xl font-normal">/ month</span>
+    </p>
+    <ul className="space-y-3 mb-8">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-center">
+          <Check className="mr-2 h-5 w-5 text-green-500" />
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
+    <Link to="/contact">
+      <button className="w-full bg-red-600 hover:bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-opacity-90 transition duration-300">
+       Get Start
+      </button>
+    </Link>
+  </div>
+);
 const pricingTiers = [
   {
-    name: "CRM OS",
-    price: "$500",
-    status: "left",
-    description: "CRM Set-up, 100% done-for-you, custom and fully integrated",
-    features: [
-      { text: "Simple lead filters and stages" },
-      { text: "Leads automatically added" },
-      { text: "Follow-up system" },
-      { text: "Mass email system" },
-      { text: "Central KPI dashboard" },
-      { text: "Training and adoption" },
-      { text: "Free B2B growth masterclass" },
-      { text: "Free cold email course" },
-      { text: "Free LinkedIn sales course" },
-      { text: "Free Meta Ads course" },
-      { text: "Free SEO and Google Ads course" },
-      { text: "You own everything 100%" },
-      { text: "1-2 week implementation" },
-    ],
+    name: "Free",
+    price: "$0",
+    features: ["Limited AI queries", "Basic models", "Community support"],
   },
   {
-    name: "Sales OS",
-    price: "$2,950",
-    status: "top",
-    description:
-      "CRM + AI Automated Sales Process\n100% done-for-you, custom and fully integrated",
-    features: [
-      { text: "Sales process audit" },
-      { text: "AI appt setter (two-way SMS & Email)" },
-      { text: "Speed-to-lead system" },
-      { text: "Automated follow-up" },
-      { text: "Automated proposals and signatures" },
-      { text: "Integrated payments" },
-      { text: "Automated notifications" },
-      { text: "AI call recording and summaries" },
-      { text: "Automated scheduling" },
-      { text: "Form creation" },
-      { text: "Appointment reminders" },
-      { text: "You own everything 100%" },
-      { text: "4 week implementation" },
-    ],
+    name: "Starter",
+    price: "$9.99",
+    features: ["100 AI queries", "Basic models", "24/7 support"],
   },
   {
-    name: "Full Scale OS",
-    price: "$5,950",
-    status: "right",
-    description:
-      "CRM + AI Automated Sales Process\n100% done-for-you, custom and fully integrated",
+    name: "Professional",
+    price: "$29.99",
     features: [
-      { text: "Project Management tool set-up" },
-      { text: "Standardized task management" },
-      { text: "Automated hand-offs" },
-      { text: "Accountability systems" },
-      { text: "Form creation" },
-      { text: "Automated onboarding" },
-      { text: "Deadline reminders" },
-      { text: "Automated approvals" },
-      { text: "Workflow automation" },
-      { text: "Centralized documents and assets" },
-      { text: "Quality assurance system" },
-      { text: "You own everything 100%" },
-      { text: "8 week implementation" },
+      "Unlimited AI queries",
+      "All models",
+      "Dedicated API access",
+      "Priority support",
+    ],
+    isPopular: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    features: [
+      "Tailored solutions",
+      "Custom models",
+      "24/7 support",
+      "Dedicated account manager",
     ],
   },
 ];
@@ -86,47 +81,9 @@ export default function PricingPlans() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
           {pricingTiers.map((tier, index) => (
-            <motion.div
-              key={tier.name}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-            >
-              {/* Card Header */}
-              <div className="p-6 border-b border-gray-200">
-                <div className="text-center">
-                  <div className=" font-semibold mb-4 ">
-                    {tier.price}
-                  </div>
-                  <div className="text-red-500 font-bold text-4xl  ">
-                    {tier.name}
-                  </div>
-                </div>
-                <p className="text-center text-sm mt-4">{tier.description}</p>
-              </div>
-
-              {/* Card Content */}
-              <div className="p-6 space-y-4">
-                <div className="font-medium">This Plan Includes:</div>
-                <ul className="space-y-3">
-                  {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature.text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Card Footer */}
-              <div className="p-6 border-t border-gray-200">
-                <Link to={"/contact"}>
-                  <button className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-200 font-medium">
-                    Get Started
-                  </button>
-                </Link>
-              </div>
-            </motion.div>
+            <PricingTier key={index} {...tier} />
           ))}
         </div>
       </div>

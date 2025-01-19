@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Users,
   Brain,
@@ -14,6 +14,9 @@ import Headerr from "../../Components/Header2";
 import Header from "../../Components/Header";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const teamMembers = [
     {
       name: "Sarah Johnson",

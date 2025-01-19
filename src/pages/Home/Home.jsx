@@ -12,7 +12,11 @@ import CommentSlider from "./Components/Comments";
 import ChatBot from "../../Components/ChatBot";
 import PricingPlans from "./Components/Plans";
 import FAQSection from "./Components/FAQ";
+import { useEffect } from "react";
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="bg-[#f9f4e8] text-[#1f1f1f]  flex flex-col">

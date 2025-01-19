@@ -43,7 +43,7 @@ function Support() {
             viewport={{ once: true, amount: 0.5 }}
             variants={containerVariants}
           >
-            AI <br />
+            Ai <br />
             <span className="text-red-600 animate-inherit">Data</span> <br />
             science <br />
             <span className="text-red-600 animate-inherit">analytics</span>

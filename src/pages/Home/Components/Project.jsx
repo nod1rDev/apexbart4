@@ -29,18 +29,8 @@ function ProjectShowCase() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.slice(0, 6).map((project) => (
             <Link to={"/project/" + project.id}>
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                variants={{
-                  hidden: { opacity: 0, y: 40 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 1.2 },
-                  },
-                }}
+              <div
+               
                 key={project.id}
                 className="group cursor-pointer relative bg-zinc-800/50 rounded-xl overflow-hidden border border-zinc-700/50 backdrop-blur-sm hover:border-zinc-500/50 transition-all duration-300"
               >
@@ -92,7 +82,7 @@ function ProjectShowCase() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </Link>
           ))}
         </div>

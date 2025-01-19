@@ -4,11 +4,14 @@ import { projects } from "../../../utils";
 import Headerr from "../../../Components/Header2";
 import Header from "../../../Components/Header";
 import Footer from "../../../Components/Footer";
+import { useEffect } from "react";
 
 export function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === Number(id));
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (!project) {
     return <div>Project not found</div>;
   }

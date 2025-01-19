@@ -78,7 +78,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-4 md:right-6 z-50">
+    <div className="fixed bottom-4 right-4 md:bottom-[30%] md:right-6 z-50">
       <AnimatePresence>
         {!isOpen && (
           <motion.button
@@ -90,7 +90,7 @@ const ChatBot = () => {
             className="flex items-center animate-bounce-up-down   text-white rounded-full    "
             onClick={() => setIsOpen(true)}
           >
-            <img className="w-[130px] md:w-[150px] " src="/chatbot.png" alt="" />
+            <img className="w-[120px] md:w-[130px] " src="/chatbot.png" alt="" />
 
             <style jsx>{`
               @keyframes bounce-up-down {
@@ -115,7 +115,7 @@ const ChatBot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="flex flex-col w-[350px] md:w-[380px] mb-[200px] h-[350px] md:h-[600px] bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
+            className="flex flex-col w-[350px] md:w-[380px] mb-[200px] md:mb-[-200px] h-[350px] md:h-[600px] bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
           >
             <div className="flex items-center justify-between border-b border-gray-700 p-4 bg-gray-800 text-white">
               <div className="flex items-center   gap-3">

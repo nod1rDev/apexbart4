@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { projects } from "../../utils";
 import Headerr from "../../Components/Header2";
@@ -10,7 +10,9 @@ export function ProjectList() {
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 9;
   const totalPages = Math.ceil(projects.length / projectsPerPage);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
   const currentProjects = projects.slice(

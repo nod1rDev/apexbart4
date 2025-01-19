@@ -3,8 +3,12 @@ import Headerr from "../../Components/Header2";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import FreeConsoulting from "../Home/Components/FreeConsoulting";
+import { useEffect } from "react";
 
 export default function BlogPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-[#f9f4e8] ">
       <Headerr />

@@ -62,11 +62,11 @@ const CommentSlider = () => {
   const commentSliderSettings = {
     dots: false,
     infinite: true,
-    speed: 3000,
+    speed: 10000,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 6000,
     arrows: false,
     responsive: [
       {
@@ -86,8 +86,8 @@ const CommentSlider = () => {
     slidesToShow: 6,
     rtl: true,
     autoplaySpeed: 0,
-    speed: 3000,
-    autoplaySpeed: 4000,
+    speed: 10000,
+    autoplaySpeed: 6000,
     cssEase: "linear",
     infinite: true,
     responsive: [
@@ -106,8 +106,8 @@ const CommentSlider = () => {
     ...commentSliderSettings,
     slidesToShow: 6,
     rtl: false,
-    speed: 3000,
-    autoplaySpeed: 4000,
+    speed: 10000,
+    autoplaySpeed: 6000,
     autoplaySpeed: 0,
     cssEase: "linear",
     infinite: true,
