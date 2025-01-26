@@ -1,47 +1,65 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { services } from "../utils";
+import React, {
+  useCallback,
+  useState,
+} from 'react';
+
+import { Link } from 'react-router-dom';
+
+import {
+  companyInfo,
+  services,
+} from '../utils';
 
 function Footer() {
   const [email, setEmail] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle newsletter signup logic here
-    console.log("Newsletter signup:", email);
-    setEmail("");
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
   };
 
-  const footerNavItems = [
-    {
-      title: "Services",
-      items: services.map((e) => {
-        return { name: e.title, link: "/services/" + e.id };
-      }),
-    },
-    {
-      title: "Results",
+  const handleSubmit = useCallback(async (e) => {
+    e.preventDefault();
+    if (!validateEmail(email)) {
+      setFormErrors({ email: 'Please enter a valid email' });
+      return;
+    }
+    
+    try {
+      await contactService.newsletter(email);
+      setSubmitStatus({ type: 'success', message: 'Successfully subscribed!' });
+      setEmail('');
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Subscription failed. Please try again.' });
+    }
+  }, [email]);
+
+  const footerSections = {
+    company: {
+      title: "Company",
       items: [
-        { name: "Case Study 1", link: "/case-study-1" },
-        { name: "Case Study 2", link: "/case-study-2" },
-      ],
+        { name: "About Us", link: "/about" },
+        { name: `Founded ${companyInfo.founding}`, link: "/history" },
+        { name: companyInfo.location, link: "/contact" },
+      ]
     },
-    {
-      title: "About Us",
+    services: {
+      title: "Our Services",
+      items: services.map(s => ({
+        name: s.title,
+        link: `/services/${s.slug}`,
+      }))
+    },
+    contact: {
+      title: "Contact",
       items: [
-        { name: "Company History", link: "/history" },
-        { name: "Team", link: "/team" },
-      ],
-    },
-    {
-      title: "Resources",
-      items: [
-        { name: "Blog", link: "/blog" },
-        { name: "Whitepapers", link: "/whitepapers" },
-        { name: "Webinars", link: "/webinars" },
-      ],
-    },
-  ];
+        { name: "Telegram", link: companyInfo.contact.telegram },
+        { name: "Email Us", link: `mailto:${companyInfo.contact.email}` },
+      ]
+    }
+  };
 
   return (
     <footer className="bg-[#1f1f1f] text-[#f9f4e8] py-12">
@@ -50,15 +68,18 @@ function Footer() {
           {/* Logo and company info */}
           <div className="col-span-1 lg:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <img src="/logo.png" className="w-[50px]" alt="Logo" />
+              <img loading="lazy" src="/logo.png" className="w-[50px]" alt="Logo" />
               <span className="font-bold ml-2 text-[20px]">
                 ApexBart Solution
               </span>
             </Link>
             <p className="mb-4">
-              Empowering businesses with innovative solutions.
+              Empowering businesses through exceptional multilingual communication and content creation since 2023. Based in Phnom Penh, Cambodia.
             </p>
             <div className="flex space-x-4">
+              <a href="https://t.me/ApexBart" className="hover:text-red-500">
+                {/* Telegram icon */}
+              </a>
               <a href="#" className="hover:text-red-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +114,7 @@ function Footer() {
           </div>
 
           {/* Navigation */}
-          {footerNavItems.map((section, index) => (
+          {Object.values(footerSections).map((section, index) => (
             <div key={index} className="col-span-1">
               <h3 className="text-lg font-bold mb-4">{section.title}</h3>
               <ul className="space-y-2">
@@ -129,6 +150,9 @@ function Footer() {
               className="flex-grow px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               required
             />
+            {formErrors.email && (
+              <p className="text-red-500">{formErrors.email}</p>
+            )}
             <button
               type="submit"
               className="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-500 transition-colors duration-300"
@@ -136,6 +160,11 @@ function Footer() {
               Subscribe
             </button>
           </form>
+          {submitStatus.message && (
+            <div className={`text-${submitStatus.type === 'success' ? 'green' : 'red'}-500`}>
+              {submitStatus.message}
+            </div>
+          )}
         </div>
 
         {/* Copyright */}

@@ -1,5 +1,10 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
-import { motion } from "framer-motion";
+import React, {
+  lazy,
+  useEffect,
+  useState,
+} from 'react';
+
+import { motion } from 'framer-motion';
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
@@ -43,7 +48,7 @@ function Support() {
             viewport={{ once: true, amount: 0.5 }}
             variants={containerVariants}
           >
-            Ai <br />
+            AIIIII <br />
             <span className="text-red-600 animate-inherit">Data</span> <br />
             science <br />
             <span className="text-red-600 animate-inherit">analytics</span>
