@@ -1,15 +1,33 @@
+<<<<<<< HEAD
 import  { useEffect, useState } from "react";
 import { Clock, Calendar, Globe } from "lucide-react";
 import "react-datepicker/dist/react-datepicker.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { DatePickerr } from "./components/DatePicker";
+=======
+import 'react-datepicker/dist/react-datepicker.css';
+import 'react-phone-input-2/lib/style.css';
+>>>>>>> 75829bfae02b1fbb1985785d2a67362980e49350
 
-import Header from "../../Components/Header";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
 
-import Footer from "../../Components/Footer";
-import { useNavigate } from "react-router-dom";
-import { POST } from "../../API/database";
+import {
+  Calendar,
+  Clock,
+  Globe,
+} from 'lucide-react';
+import PhoneInput from 'react-phone-input-2';
+import { useNavigate } from 'react-router-dom';
+
+import Footer from '../../Components/Footer';
+import Header from '../../Components/Header';
+import { POST } from '../../utils';
+import { DatePickerr } from './components/DatePicker';
+
 function Contact() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);

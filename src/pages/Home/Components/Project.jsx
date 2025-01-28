@@ -1,7 +1,11 @@
-import { GithubIcon, Globe } from "lucide-react";
-import { Link } from "react-router-dom";
-import { projects } from "../../../utils";
-import { motion } from "framer-motion";
+import {
+  GithubIcon,
+  Globe,
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+import { projects } from '../../../utils';
+
 function ProjectShowCase() {
   return (
     <div

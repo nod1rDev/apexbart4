@@ -1,22 +1,36 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { services } from "../utils";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import { Link } from 'react-router-dom';
+
+import { services } from '../utils';
 
 function Headerr() {
   const [activeMenu, setActiveMenu] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 80);
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < lastScrollY) {
+        // Scrolling UP
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling DOWN
+        setIsVisible(currentScrollY <= 0 || currentScrollY < 80);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const toggleMenu = (menuIndex) => {
     setActiveMenu(activeMenu === menuIndex ? null : menuIndex);
@@ -60,7 +74,7 @@ function Headerr() {
 
   return (
     <div
-      className={`bg-[#f9f4e8] z-50 w-full shadow-lg fixed top-0 transition-transform duration-500 ${
+      className={`bg-[#f9f4e8] z-50 w-full shadow-lg fixed top-0 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

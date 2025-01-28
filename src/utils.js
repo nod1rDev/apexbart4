@@ -1,36 +1,62 @@
+export const companyInfo = {
+  name: "ApexBart Solutions",
+  founding: "August 2023",
+  location: "Phnom Penh, Cambodia",
+  founder: "Shakhzod 'Bart' Tursunov",
+  languages: ["English", "Russian", "Khmer", "Uzbek"],
+  contact: {
+    email: "contact@apexbart.com",
+    telegram: "https://t.me/ApexBart",
+    phone: "+855 XX XXX XXX"
+  }
+};
+
 export const workers = [
   {
-    name: "Klament",
-    profossion: "  Iste'dodlarni qo'lga kiritish bo'yicha katta mutaxassis",
-    p: ` Clément - kodni mukammal biladigan texnologik yollovchi.
-        Sokin, do'stona va o'ta professional, u startaplarda katta
-        tajribaga ega, bu unga kompaniyalarning texnik ehtiyojlarini
-        aniq tushunish imkonini beradi. Hivebrite va Liberkeys-da
-        o'zini yuqori darajadagi texnik iste'dodlarni ishga olishga
-        muvaffaq bo'lganidan so'ng, Klement texnologik ekotizimda
-        yuqori samarali jamoalarni qanday yaratishni yaxshi biladi.`,
-    img: "https://cdn.prod.website-files.com/667ebf1b9f3deeecd914b083/667ebf1b9f3deeecd914b085_1674411835734.jpg",
+    name: "Shakhzod 'Bart' Tursunov",
+    profession: "Founder & CEO",
+    p: "Founded ApexBart Solutions in 2023, bringing expertise in multilingual voice recording and AI project management. Fluent in English, Russian, and Uzbek.",
+    img: "/team/bart.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/...",
+      telegram: "https://t.me/ApexBart"
+    }
   },
+  {
+    name: "Kami",
+    profession: "Project Management Lead",
+    p: "Oversees project timelines and quality control, ensuring seamless delivery of voice recording projects.",
+    img: "/team/kami.jpg"
+  },
+  {
+    name: "Diyor",
+    profession: "Multilingual Operations Manager",
+    p: "Manages multilingual tasks and communication, specializing in project coordination.",
+    img: "/team/diyor.jpg"
+  }
 ];
 
 export const services = [
   {
     id: 1,
-    title: "Freelancer ",
-    img: "/freelancer.jpg",
-    overview:
-      "At ApexBart Solutions, we harness the power of a global network of experienced freelancers to provide flexible and on-demand support for a wide array of projects and industries. Our freelancer services offer you access to a diverse pool of talent, allowing you to scale your operations efficiently and achieve your goals with ease.",
+    title: "Voice Recording Services",
+    slug: "voice-recording",
+    img: "/services/voice-recording.jpg",
+    metaDescription: "Professional multilingual voice recording services for AI training, e-learning, and content localization in English, Russian, and Khmer.",
+    overview: "Professional voice recording services specializing in AI training data, e-learning content, and multilingual solutions. Our team of native speakers ensures high-quality recordings across multiple languages.",
     Services_Offered: [
       {
-        title: "Global Talent Network:",
-        description:
-          "Our extensive network connects you with skilled freelancers specializing in various fields, including voice-over, content creation, graphic design, and more. With talent from around the world, we ensure that you have access to the right expertise for your project.",
+        title: "AI Training Data Collection",
+        description: "High-quality voice recordings for machine learning models, with expertise in accent variation and linguistic accuracy."
       },
       {
-        title: "Custom Project Support:",
-        description:
-          "We understand that each project is unique, which is why we offer tailored solutions designed to meet your specific needs and goals. Whether you require short-term assistance or ongoing support, our freelancer services are flexible and adaptable to your requirements.",
+        title: "AI Training Data",
+        description: "High-quality voice recordings for training AI and machine learning models, with expertise in multiple languages and accents."
       },
+      {
+        title: "E-Learning Content",
+        description: "Professional voice-overs for educational materials, ensuring clear pronunciation and engaging delivery."
+      }
     ],
     Benefits: [
       {
@@ -61,52 +87,66 @@ export const services = [
           "Our freelancer network supported content creation for social media campaigns, providing rapid turnaround times and high-quality outputs that helped our clients engage their audiences effectively.",
       },
     ],
+    pricing: {
+      starter: {
+        price: "99",
+        features: ["Up to 1 hour of recording", "Single language", "Basic editing"]
+      },
+      professional: {
+        price: "299",
+        features: ["Up to 5 hours", "Two languages", "Advanced editing"]
+      }
+    },
+    stats: {
+      projectsCompleted: 150,
+      languages: 4,
+      satisfactionRate: "98%"
+    }
   },
   {
     id: 2,
-    title: "Professional Voice-Over ",
-    img: "/voiceover.jpg",
-    overview:
-      "At ApexBart Solutions, we offer professional voice-over services that are designed to captivate and engage your audience, regardless of the platform or project. Whether you're creating content for YouTube, producing professional media projects, or need voice-overs for other applications, our global team of native-speaking voice talent ensures that your content resonates with authenticity and professionalism.",
+    title: "Project Management",
+    img: "/project-management.jpg",
+    overview: "Streamlined project coordination using advanced tools like Trello and Lark, ensuring efficient delivery and clear communication throughout your project lifecycle.",
     Services_Offered: [
       {
-        title: "YouTube and Media Projects:",
+        title: "Process Management: ",
         description:
-          " Our talented voice-over artists can bring life to your scripts, from lively vlogs to in-depth documentaries. We specialize in creating voice-overs that not only match the tone and style of your content but also enhance its impact.",
+          "Our efficient workflows are powered by cutting-edge project management platforms such as Lark and Trello, enabling real-time collaboration and transparency among team members. This ensures that everyone is aligned and working towards the same goals.",
       },
       {
-        title: "Professional Voice Actors:",
+        title: "Timely Deliveries:",
         description:
-          "Collaborate with our network of skilled professionals who are native speakers in various languages. Whether you need a voice for e-learning modules, corporate presentations, or global advertising campaigns, our voice actors will deliver top-notch performances that meet your project's requirements.",
+          " With a proven track record of meeting deadlines without compromising on quality, our project management services are designed to deliver projects on time, every time. We understand the importance of timely completion and work diligently to ensure that your projects are delivered within the agreed timeframe.",
       },
     ],
     Benefits: [
       {
-        title: "Boost Media Engagement:",
+        title: "Transparency and Efficiency:",
         description:
-          "Our voice-over services help you connect with your audience on a deeper level, increasing engagement and viewer retention. The right voice can make your content more relatable and memorable.",
+          "Our project management approach prioritizes transparency and efficiency, allowing you to stay informed and involved throughout the project lifecycle. With real-time updates and clear communication channels, you can track progress and make informed decisions.",
       },
       {
-        title: "Linguistic and Cultural Accuracy: ",
+        title: "Stress-Free Management: ",
         description:
-          "By working with native speakers, you can be sure that your voice-over not only sounds natural but also captures the nuances and cultural subtleties of the target language, ensuring that your message is conveyed accurately and effectively.",
+          "Let our experienced project management team handle the intricacies of your projects, from planning and execution to delivery. With us at the helm, you can focus on your core business activities while we take care of the details.",
       },
       {
-        title: "Seamless Integration:",
+        title: "On-Time Deliveries: ",
         description:
-          " We understand the importance of seamless integration in multimedia projects. Our voice-over services are designed to blend perfectly with your existing content, whether it's video, audio, or other media formats.",
+          "We are committed to delivering projects on time, ensuring that you meet your deadlines and stay ahead of schedule. Our efficient processes and meticulous planning enable us to deliver high-quality results without delays.",
       },
     ],
     Examples: [
       {
-        title: "International YouTube Channels:",
+        title: "Multilingual Voice Recording Project: ",
         description:
-          "We have provided voice-over services for several international YouTube channels with millions of subscribers, helping them expand their reach and engage their global audience effectively.",
+          "We successfully managed a large-scale multilingual voice recording project involving over 100 freelancers from around the world. Our efficient process management and real-time collaboration tools ensured seamless coordination and outstanding results.",
       },
       {
-        title: "Corporate Training and Advertising:",
+        title: "AI Automation Project:",
         description:
-          "Our professional narration services have been instrumental in creating impactful corporate training videos and global advertising campaigns, ensuring that the message is delivered with clarity and professionalism.",
+          "Our project management expertise was put to the test in a complex AI automation project, where we not only met but exceeded expectations by delivering the project under budget and ahead of schedule. Our attention to detail and commitment to quality ensured that the client was fully satisfied with the outcome.",
       },
     ],
   },
@@ -256,6 +296,21 @@ export const services = [
   },
 ];
 
+export const caseStudies = [
+  {
+    id: 1,
+    title: "Khmer Voice Recording Project",
+    client: "EduLearn Co.",
+    scope: "900 audio recordings",
+    results: "Enhanced learning experience for Khmer-speaking students",
+    testimonial: {
+      text: "Exceptional quality and cultural relevance",
+      author: "John Smith, EduLearn Director"
+    }
+  },
+  // ...other case studies
+];
+
 export const projects = Array.from({ length: 100 }, (_, i) => ({
   id: i + 1,
   title: `Project ${i + 1}`,
@@ -344,6 +399,83 @@ export const comments = [
   },
 ];
 
+<<<<<<< HEAD
 
 
+=======
+export const validateService = (service) => {
+  const requiredFields = ['id', 'title', 'img', 'overview'];
+  return requiredFields.every(field => service[field]);
+};
+
+// Add analytics and tracking
+export const analytics = {
+  googleAnalyticsId: "UA-XXXXXXXXX",
+  metaPixelId: "XXXXXXXXXX",
+  linkedInPixel: "XXXXXXXXXX"
+};
+
+// Add language support
+export const supportedLanguages = {
+  en: { name: "English", nativeName: "English" },
+  ru: { name: "Russian", nativeName: "Русский" },
+  km: { name: "Khmer", nativeName: "ភាសាខ្មែរ" },
+  uz: { name: "Uzbek", nativeName: "O'zbek" }
+};
+
+// Add pricing tiers
+export const pricingTiers = {
+  basic: {
+    name: "Basic",
+    price: 99,
+    features: ["Up to 1 hour recording", "Single language", "Basic editing"]
+  },
+  // ...other tiers
+};
+
+// Add service categories
+export const serviceCategories = {
+  voiceOver: "Voice Recording",
+  projectManagement: "Project Management",
+  aiSolutions: "AI Solutions",
+  translation: "Translation Services"
+};
+
+// Add API endpoints
+export const apiEndpoints = {
+  contact: "/api/contact",
+  newsletter: "/api/newsletter",
+  booking: "/api/booking"
+};/**
+ * Project Structure:
+ * src/
+ * ├── Components/           # Use consistent casing (uppercase)
+ * │   ├── ErrorBoundary.jsx
+ * │   ├── LoadingSpinner.jsx
+ * │   ├── Header.jsx
+ * │   ├── Footer.jsx
+ * │   └── shared/
+ * │       ├── PageLayout.jsx
+ * │       └── OptimizedImage.jsx
+ */
+const BASE_URL = "https://api.azizov.dev/api/";
+
+export const POST = async (data, url) => {
+  try {
+    const response = await fetch(BASE_URL + url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
+  }
+};
+>>>>>>> 75829bfae02b1fbb1985785d2a67362980e49350
 
