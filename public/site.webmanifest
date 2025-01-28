@@ -1,6 +1,6 @@
 {
   "name": "ApexBart Solution",
-  "private":true,
+  "private": true,
   "short_name": "ApexBart",
   "description": "Professional AI, Automation and Voice-Over Services",
   "start_url": "/",
