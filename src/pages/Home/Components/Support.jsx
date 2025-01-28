@@ -30,7 +30,7 @@ function Support() {
         <div className="absolute flex  inset-0 md:relative md:w-[90%] h-[90vh] md:order-2">
           <div className="w-full z-auto h-full object-cover">
             {" "}
-            <img className="md:w-[90%] md:h-[90%]" src="/robotBg.png" alt="" />
+            <img className="  hidden md:block md:w-[90%] md:h-[90%]" src="/robotBg.png" alt="" />
           </div>
         </div>
 

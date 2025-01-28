@@ -1,7 +1,8 @@
 import { GithubIcon, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
+import { memo } from 'react';
 
-export function ProjectCard({ project }) {
+export const ProjectCard = memo(function ProjectCard({ project }) {
   return (
     <div className="group relative bg-[#f9f4e8] rounded-xl overflow-hidden border border-[#1f1f1f]/10 hover:border-[#1f1f1f]/30 transition-all duration-300 shadow-md hover:shadow-xl">
       <Link to={`/project/${project.id}`}>
@@ -56,4 +57,4 @@ export function ProjectCard({ project }) {
       </div>
     </div>
   );
-}
+});

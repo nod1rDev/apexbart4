@@ -1,78 +1,144 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-
-import { ArrowLeft } from "lucide-react";
-
-import Header from "../../Components/Header";
-import { ServiceSection } from "./Components/ServiceSection";
-import { services } from "../../utils";
+import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import Headerr from "../../Components/Header2";
 import Footer from "../../Components/Footer";
+import { services } from "../../utils";
+import Header from "../../Components/Header";
 
 export function ServicePage() {
-  const { id } = useParams();
-  const service = services.find((s) => s.id === Number(id));
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const { id } = useParams();
+  const service = services.find((s) => s.id === parseInt(id));
+
   if (!service) {
-    return (
-      <div className="min-h-screen bg-[#f9f4e8] flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">
-            Service not found
-          </h2>
-          <Link to="/" className="text-blue-600 hover:text-blue-800">
-            Return to Home
-          </Link>
-        </div>
-      </div>
-    );
+    return <ErrorPage message="Service not found" />;
   }
 
   return (
-    <div className="min-h-screen bg-[#f9f4e8]">
+    <>
       <Headerr />
       <Header />
-      <div className="container mx-auto px-4 py-12">
-        <Link
-          to="/"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8 group"
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        {/* Hero Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="relative h-[60vh] min-h-[400px] flex items-center justify-center"
         >
-          <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          Back to Services
-        </Link>
-
-        <div className="bg-[#f9f5ef] rounded-2xl shadow-xl overflow-hidden">
-          <div className="relative h-72 md:h-96">
+          <div className="absolute inset-0">
             <img
               src={service.img}
               alt={service.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/40" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-white text-center px-4">
-                {service.title}
-              </h1>
-            </div>
+            <div className="absolute inset-0 bg-black/50" />
           </div>
-
-          <div className="p-8">
-            <p className="text-gray-600 text-lg mb-12 leading-relaxed">
+          <div className="relative z-10 text-center px-4">
+            <motion.h1
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              className="text-4xl md:text-5xl font-bold text-white mb-4"
+            >
+              {service.title}
+            </motion.h1>
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-gray-200 max-w-2xl mx-auto"
+            >
               {service.overview}
-            </p>
+            </motion.p>
+          </div>
+        </motion.section>
 
-            <ServiceSection
-              title="Services Offered"
-              items={service.Services_Offered}
-            />
-            <ServiceSection title="Benefits" items={service.Benefits} />
-            <ServiceSection title="Success Stories" items={service.Examples} />
+        {/* Content Section */}
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Features */}
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-bold mb-8">Key Features</h2>
+              <div className="space-y-6">
+                {service.Services_Offered?.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ x: -20, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-start space-x-4"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                      <span className="text-blue-600 font-semibold">
+                        {index + 1}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-xl mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Benefits */}
+            <motion.div
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-bold mb-8">Benefits</h2>
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                {service.Benefits?.map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="mb-6 last:mb-0"
+                  >
+                    <h3 className="font-semibold text-xl mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-600">{benefit.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
+
+const ErrorPage = ({ message }) => (
+  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="text-center">
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">{message}</h2>
+      <Link
+        to="/services"
+        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        <ArrowLeft className="w-4 h-4 mr-2" />
+        Return to Services
+      </Link>
+    </div>
+  </div>
+);
+
+export default ServicePage;

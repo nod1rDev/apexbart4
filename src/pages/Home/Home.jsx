@@ -51,7 +51,7 @@ function Home() {
               {services.map((service, index) => (
                 <ServiceCard key={service.id} service={service} index={index} />
               ))}
-              <motion.div className="group bg-[#fcf8f1] flex justify-between flex-col p-[32px] rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <motion.div className="group bg-white flex justify-between flex-col p-[32px] rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <div>
                   <h1 className="text-[3rem] text-center font-bold">
                     Contact <span className="text-red-600">US</span>
